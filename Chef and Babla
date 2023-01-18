@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        long long n;
+        cin >> n;
+        long long a[n];
+        for(int i=0;i<n;i++)
+        {
+            cin >> a[i];
+        }
+        long long rangef = INT_MIN;
+        long long ranges = INT_MAX;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]>=0 && a[i]<ranges)
+            {
+                ranges = a[i];
+            }
+            if(a[i]<0 && a[i]>rangef)
+            rangef = a[i];
+        }
+        long long ans=min(ranges,abs(rangef));
+        cout << ans-1 << endl;
+    }
+    return 0;
+}
+
+
